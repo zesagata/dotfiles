@@ -12,8 +12,6 @@ return {
               env[key] = value
             end
           end
-        else
-          print("Warning: " .. filename .. " not found. Skipping...")
         end
         return env
       end
