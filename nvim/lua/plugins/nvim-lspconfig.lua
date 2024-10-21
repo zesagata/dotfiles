@@ -34,7 +34,7 @@ return {
                 useany = true,
               },
               usePlaceholders = false,
-              completeUnimported = false,
+              completeUnimported = true,
               staticcheck = true,
               directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
               semanticTokens = true,

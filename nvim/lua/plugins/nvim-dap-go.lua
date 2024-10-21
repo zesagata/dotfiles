@@ -20,11 +20,35 @@ return {
         dap_configurations = {
           {
             type = "go",
-            name = "[Default] Staging",
+            name = "[Staging][NVIM] Default",
             mode = "debug",
             request = "launch",
             program = workspace_dir .. "/main.go",
             env = load_env_file(workspace_dir .. "/staging.default.env"),
+          },
+          {
+            type = "go",
+            name = "[Staging][NVIM] Worker",
+            mode = "debug",
+            request = "launch",
+            program = workspace_dir .. "/main.go",
+            env = load_env_file(workspace_dir .. "/staging.worker.env"),
+          },
+          {
+            type = "go",
+            name = "[Production][NVIM] Default",
+            mode = "debug",
+            request = "launch",
+            program = workspace_dir .. "/main.go",
+            env = load_env_file(workspace_dir .. "/production.default.env"),
+          },
+          {
+            type = "go",
+            name = "[Production][NVIM] Worker",
+            mode = "debug",
+            request = "launch",
+            program = workspace_dir .. "/main.go",
+            env = load_env_file(workspace_dir .. "/production.worker.env"),
           },
         },
         delve = {
