@@ -11,5 +11,8 @@ map("n", "<C-Down>", "<cmd>resize -8<cr>", { desc = "Decrease Window Height" })
 map("n", "<C-Left>", "<cmd>vertical resize -8<cr>", { desc = "Decrease Window Width" })
 map("n", "<C-Right>", "<cmd>vertical resize +8<cr>", { desc = "Increase Window Width" })
 
--- Auto save
+-- Auto saved
 map("i", "<Esc>", "<Esc>:w<CR>", { noremap = true, silent = true })
+
+map("n", "e", "b", { desc = "Move backward to start of word" })
+map("n", "b", "e", { desc = "Move forward to end of word" })

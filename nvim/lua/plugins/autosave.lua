@@ -24,11 +24,11 @@ return {
     name = "custom_autosave",
     config = function()
       -- Auto save when leaving insert mode
-      vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
-        pattern = { "*" },
-        command = "silent! wall",
-        nested = true,
-      })
+      -- vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
+      --  pattern = { "*" },
+      -- command = "silent! wall",
+      -- nested = true,
+      -- })
 
       -- Auto save when leaving visual mode
       vim.api.nvim_create_autocmd({ "ModeChanged" }, {
