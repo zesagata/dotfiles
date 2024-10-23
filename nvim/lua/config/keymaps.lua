@@ -16,3 +16,5 @@ map("i", "<Esc>", "<Esc>:w<CR>", { noremap = true, silent = true })
 
 map("n", "e", "b", { desc = "Move backward to start of word" })
 map("n", "b", "e", { desc = "Move forward to end of word" })
+
+map("n", "<leader>fg", "<cmd>Telescope live_grep search_dirs={'.'}<CR>", { noremap = true, silent = true })
