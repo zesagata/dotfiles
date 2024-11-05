@@ -2,13 +2,62 @@ return {
   {
     "rcarriga/nvim-dap-ui",
     dependencies = { "nvim-neotest/nvim-nio" },
-  -- stylua: ignore
-  keys = {
-    { "<leader>du", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
-    { "<leader>de", function() require("dapui").eval() end, desc = "Eval", mode = {"n", "v"} },
-  },
+    keys = {
+      {
+        "<leader>du",
+        function()
+          require("dapui").toggle({})
+        end,
+        desc = "Dap UI",
+      },
+      {
+        "<leader>de",
+        function()
+          require("dapui").eval()
+        end,
+        desc = "Eval",
+        mode = { "n", "v" },
+      },
+    },
     opts = {
-      autoscroll = true,
+      layouts = {
+        {
+          elements = {
+            {
+              id = "scopes",
+              size = 0.25,
+            },
+            {
+              id = "breakpoints",
+              size = 0.25,
+            },
+            {
+              id = "stacks",
+              size = 0.25,
+            },
+            {
+              id = "watches",
+              size = 0.25,
+            },
+          },
+          position = "left",
+          size = 40,
+        },
+        {
+          elements = {
+            {
+              id = "repl",
+              size = 0.8,
+            },
+            {
+              id = "console",
+              size = 0.2,
+            },
+          },
+          position = "bottom",
+          size = 10,
+        },
+      },
     },
     config = function(_, opts)
       local dap = require("dap")
