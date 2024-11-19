@@ -53,15 +53,17 @@ return {
                   sorter = conf.generic_sorter({}),
                   attach_mappings = function(prompt_buffer_number, map)
                     map(
-                      "n",
-                      "dd", -- your mapping here
+                      "i",
+                      "<c-d>", -- your mapping here
                       function()
                         local state = require("telescope.actions.state")
                         local selected_entry = state.get_selected_entry()
                         local current_picker = state.get_current_picker(prompt_buffer_number)
 
-                        harpoon:list():remove(selected_entry)
-                        current_picker:refresh(make_finder())
+                        if selected_entry and selected_entry.value then
+                          harpoon:list():remove_at(selected_entry.index)
+                          current_picker:refresh(make_finder())
+                        end
                       end
                     )
 

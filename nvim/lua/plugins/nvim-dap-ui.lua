@@ -48,6 +48,9 @@ return {
             {
               id = "repl",
               size = 0.8,
+              options = {
+                follow = true,
+              },
             },
             {
               id = "console",
