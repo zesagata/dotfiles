@@ -24,3 +24,5 @@ end, { desc = "Copy file path" })
 map("n", "<leader>cn", function()
   vim.fn.setreg("+", vim.fn.expand("%:t"))
 end, { desc = "Copy file name" })
+
+map("n", "<leader>qam", ":mks! | :qa<CR>", { noremap = true, silent = true })
