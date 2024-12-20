@@ -39,3 +39,11 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     })
   end,
 })
+
+
+vim.api.nvim_create_autocmd("WinEnter", {
+  pattern = "*",
+  callback = function()
+    vim.opt_local.winfixbuf = false
+  end,
+})

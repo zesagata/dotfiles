@@ -14,7 +14,11 @@ map("n", "<C-Right>", "<cmd>vertical resize +8<cr>", { desc = "Increase Window W
 -- Auto saved
 map("i", "<Esc>", "<Esc>:w<CR>", { noremap = true, silent = true })
 
-map("n", "<leader>fg", "<cmd>Telescope live_grep search_dirs={'.'}<CR>", { noremap = true, silent = true })
+-- map("n", "<leader>fg", "<cmd>Telescope live_grep search_dirs={'.'}<CR>", { noremap = true, silent = true })
+local fzf_lua = require('fzf-lua')
+map("n", "<leader>fg", function()
+  fzf_lua.live_grep()
+end, { noremap = true, silent = true, desc = "FZF Live Grep" })
 
 map("n", "<leader>do", ":lua vim.diagnostic.open_float(nil, {focus=true, scope='cursor'})<CR>")
 
