@@ -3,8 +3,8 @@ return {
   { "ellisonleao/gruvbox.nvim" },
   -- add cyberdream
   { "scottmckendry/cyberdream.nvim" },
-  { "rose-pine/neovim", name = "rose-pine" },
-  { "Shatur/neovim-ayu", name = "ayu" },
+  { "rose-pine/neovim",             name = "rose-pine" },
+  { "Shatur/neovim-ayu",            name = "ayu" },
   -- Configure LazyVim to load gruvbox
   {
     "olivercederborg/poimandres.nvim",
@@ -27,7 +27,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "substrata",
+      colorscheme = "ayu",
     },
   },
 }
