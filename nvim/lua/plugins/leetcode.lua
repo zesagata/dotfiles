@@ -13,7 +13,19 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
     opts = {
-      lang = "go",
+      lang = "golang",
+      hooks = {
+        ["question_enter"] = {
+          function()
+            vim.opt.winfixbuf = false
+          end,
+        },
+      },
+      injector = {
+        ["golang"] = {
+          before = { "//go:build ignore", "// +build ignore", "package main", "func main() {", "  return", "}" },
+        },
+      },
     },
   },
 }
