@@ -4,7 +4,7 @@
 --
 -- Disable autoformat for lua files
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "toml" },
+  pattern = { "toml", "py" },
   callback = function()
     vim.b.autoformat = false
   end,
@@ -33,7 +33,7 @@ vim.api.nvim_create_autocmd({ "ModeChanged" }, {
 -- Optional: Add a notification when file is saved
 vim.api.nvim_create_autocmd("BufWritePost", {
   callback = function()
-    vim.notify("File saved!", vim.log.levels.INFO, {
+    vim.notify("File saved !", vim.log.levels.INFO, {
       title = "AutoSave",
       timeout = 500,
     })
