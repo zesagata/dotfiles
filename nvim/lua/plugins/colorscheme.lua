@@ -1,15 +1,11 @@
 return {
-  -- add gruvbox
   { "ellisonleao/gruvbox.nvim" },
-  -- add cyberdream
   { "scottmckendry/cyberdream.nvim" },
-  { "rose-pine/neovim",             name = "rose-pine" },
-  { "Shatur/neovim-ayu",            name = "ayu" },
-  -- Configure LazyVim to load gruvbox
+  { "rose-pine/neovim", name = "rose-pine" },
+  { "Shatur/neovim-ayu", name = "ayu" },
+  { "bluz71/vim-moonfly-colors", name = "moonfly" },
   {
     "olivercederborg/poimandres.nvim",
-    lazy = false,
-    priority = 1000,
     config = function()
       require("poimandres").setup({
         -- leave this setup function empty for default config
@@ -25,9 +21,14 @@ return {
     "kvrohit/substrata.nvim",
   },
   {
+    "projekt0n/github-nvim-theme",
+    name = "github-theme",
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "ayu",
+      colorscheme = "moonfly",
     },
   },
 }

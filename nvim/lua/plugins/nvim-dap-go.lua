@@ -75,6 +75,14 @@ return {
               program = workspace_dir .. "/.",
               env = load_env_file(workspace_dir .. "/.env"),
             },
+            {
+              type = "go",
+              name = "[General] Main No Env",
+              mode = "debug",
+              request = "launch",
+              console = "integratedTerminal",
+              program = workspace_dir .. "/.",
+            },
           },
           delve = {
             args = {
@@ -91,57 +99,6 @@ return {
         pattern = { "*.env" },
         callback = reload_dap_configurations,
       })
-
-      --
-      -- require("dap-go").setup({
-      --   dap_configurations = {
-      --     {
-      --       type = "go",
-      --       name = "[Staging][NVIM] Default",
-      --       mode = "debug",
-      --       request = "launch",
-      --       program = workspace_dir .. "/main.go",
-      --       env = load_env_file(workspace_dir .. "/staging.default.env"),
-      --     },
-      --     {
-      --       type = "go",
-      --       name = "[Staging][NVIM] Worker",
-      --       mode = "debug",
-      --       request = "launch",
-      --       program = workspace_dir .. "/main.go",
-      --       env = load_env_file(workspace_dir .. "/staging.worker.env"),
-      --     },
-      --     {
-      --       type = "go",
-      --       name = "[Production][NVIM] Default",
-      --       mode = "debug",
-      --       request = "launch",
-      --       program = workspace_dir .. "/main.go",
-      --       env = load_env_file(workspace_dir .. "/production.default.env"),
-      --     },
-      --     {
-      --       type = "go",
-      --       name = "[Production][NVIM] Worker",
-      --       mode = "debug",
-      --       request = "launch",
-      --       program = workspace_dir .. "/main.go",
-      --       env = load_env_file(workspace_dir .. "/production.worker.env"),
-      --     },
-      --     {
-      --       type = "go",
-      --       name = "[General] ENV",
-      --       mode = "debug",
-      --       request = "launch",
-      --       program = workspace_dir .. "/main.go",
-      --       env = load_env_file(workspace_dir .. "/.env"),
-      --     },
-      --   },
-      --   delve = {
-      --     args = {
-      --       "--check-go-version=false",
-      --     },
-      --   },
-      -- })
     end,
   },
 }

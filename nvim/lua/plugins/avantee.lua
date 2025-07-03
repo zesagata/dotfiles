@@ -4,13 +4,10 @@ return {
   lazy = false,
   version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
   opts = {
-    -- add any opts here
-    -- for example
     provider = "openai",
     openai = {
-      endpoint = "https://api.deepinfra.com/v1/openai",
-      -- model = "deepseek-ai/DeepSeek-R1", -- your desired model (or use gpt-4o, etc.)
-      model = "Qwen/Qwen2.5-Coder-32B-Instruct",
+      endpoint = "https://openrouter.ai/api/v1",
+      model = "anthropic/claude-sonnet-4",
       timeout = 30000, -- timeout in milliseconds
       temperature = 0, -- adjust if needed
       max_tokens = 4096,

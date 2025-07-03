@@ -22,9 +22,11 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.rust" },
     { import = "lazyvim.plugins.extras.lang.python" },
     { import = "lazyvim.plugins.extras.dap.core" },
-    -- { import = "lazyvim.plugins.extras.editor.harpoon2" },
+    { import = "lazyvim.plugins.extras.lang.tailwind" },
+    { import = "lazyvim.plugins.extras.lang.typescript" },
+    { import = "lazyvim.plugins.extras.lang.prisma" },
+    { import = "lazyvim.plugins.extras.lang.omnisharp" },
     { "akinsho/toggleterm.nvim", version = "*", config = true },
-    -- import/override with your plugins
     { import = "plugins" },
   },
   defaults = {
@@ -35,11 +37,6 @@ require("lazy").setup({
     -- have outdated releases, which may break your Neovim install.
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
-  },
-  install = {
-    colorscheme = {
-      "ayu",
-    },
   },
   checker = {
     enabled = true, -- check for plugin updates periodically
