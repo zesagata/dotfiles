@@ -26,9 +26,15 @@ return {
     lazy = false, -- make sure we load this during startup if it is your main colorscheme
   },
   {
+    "thesimonho/kanagawa-paper.nvim",
+  },
+  {
+    "metalelf0/black-metal-theme-neovim",
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "moonfly",
+      colorscheme = "gorgoroth",
     },
   },
 }

@@ -15,21 +15,17 @@ return {
         end
         return env
       end
-      local workspace_dir = vim.loop.cwd() -- Adjust as necessarily
+      local workspace_dir = vim.loop.cwd()
 
       local dap_go = require("dap-go")
 
-      -- Create a function to reload DAP configurations
       local function reload_dap_configurations()
-        -- Clear existing configurations
         require("dap").configurations.go = {}
-
-        -- Reload the entire dap-go setup with potentially updated environment
         dap_go.setup({
           dap_configurations = {
             {
               type = "go",
-              name = "[Staging][NVIM] Default",
+              name = "[Staging][Default]",
               mode = "debug",
               request = "launch",
               program = workspace_dir .. "/main.go",
@@ -37,7 +33,7 @@ return {
             },
             {
               type = "go",
-              name = "[Staging][NVIM] Worker",
+              name = "[Staging][Worker]",
               mode = "debug",
               request = "launch",
               program = workspace_dir .. "/main.go",
@@ -45,7 +41,7 @@ return {
             },
             {
               type = "go",
-              name = "[Production][Nvim] default",
+              name = "[Production][Default]",
               mode = "debug",
               request = "launch",
               program = workspace_dir .. "/main.go",
@@ -53,7 +49,7 @@ return {
             },
             {
               type = "go",
-              name = "[Production][NVIM] Worker",
+              name = "[Production][Worker]",
               mode = "debug",
               request = "launch",
               program = workspace_dir .. "/main.go",
@@ -61,15 +57,7 @@ return {
             },
             {
               type = "go",
-              name = "[Production][NVIM][JKT] Default",
-              mode = "debug",
-              request = "launch",
-              program = workspace_dir .. "/main.go",
-              env = load_env_file(workspace_dir .. "/production.default.jakarta.env"),
-            },
-            {
-              type = "go",
-              name = "[General] ENV",
+              name = "[ENV]",
               mode = "debug",
               request = "launch",
               program = workspace_dir .. "/.",
